@@ -1,0 +1,28 @@
+{
+    "name": "poi-plugin-kc3-replay",
+    "version": "1.0.0",
+    "main": "index.es",
+    "description": "Record sortie battles in poi and export them to the KC3Kai Battle Replayer",
+    "author": {
+        "name": "HKGY"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/HKGY/poi-plugin-kc3-replay"
+    },
+    "keywords": [
+        "poi",
+        "poi-plugin",
+        "kancolle",
+        "kc3",
+        "replay",
+        "battleplayer"
+    ],
+    "license": "MIT",
+    "poiPlugin": {
+        "title": "KC3 战斗回放",
+        "description": "记录出击战斗数据，导出至 KC3改 Battle Replayer 观看战斗回放",
+        "icon": "fa/film",
+        "apiVer": {}
+    }
+}
