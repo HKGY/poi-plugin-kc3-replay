@@ -12,7 +12,6 @@ const { getStore, APPDATA_PATH } = window
 
 const REPLAYER_URL = 'https://kc3kai.github.io/kancolle-replay/battleplayer.html'
 const STORAGE_FILE = path.join(APPDATA_PATH, 'kc3-replay-export.json')
-const MAX_SORTIES = 50
 
 // 各类战斗报文归类（path 已去掉 /kcsapi/ 前缀）
 const DAY_BATTLE_PATHS = new Set([
@@ -245,7 +244,6 @@ class Recorder {
         )
         if (hasBattle) {
             this.sorties.unshift(sortie)
-            if (this.sorties.length > MAX_SORTIES) this.sorties.length = MAX_SORTIES
             this.save()
         }
         this.emit()
