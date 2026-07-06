@@ -19,7 +19,9 @@ poi 插件：自动记录出击（含演习）的战斗数据，一键导出到
 
 ## 安装
 
-将本目录放入 poi 插件目录并命名为 `poi-plugin-kc3-replay`：
+可以直接在 poi 插件设置中搜索 `poi-plugin-kc3-replay` 并安装。
+
+也可以手动安装：将本目录放入 poi 插件目录并命名为 `poi-plugin-kc3-replay`：
 
 - macOS: `~/Library/Application Support/poi/plugins/node_modules/poi-plugin-kc3-replay`
 - Windows: `%APPDATA%/poi/plugins/node_modules/poi-plugin-kc3-replay`

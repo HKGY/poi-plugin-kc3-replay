@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/HKGY/poi-plugin-kc3-replay"
+        "url": "git+https://github.com/HKGY/poi-plugin-kc3-replay.git"
     },
     "keywords": [
         "poi",
@@ -24,5 +24,10 @@
         "description": "记录出击战斗数据，导出至 KC3改 Battle Replayer 观看战斗回放",
         "icon": "fa/film",
         "apiVer": {}
-    }
+    },
+    "files": [
+        "index.es",
+        "index.css",
+        "lz-string.js"
+    ]
 }
