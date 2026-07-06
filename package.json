@@ -1,6 +1,6 @@
 {
     "name": "poi-plugin-kc3-replay",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "index.es",
     "description": "Record sortie battles in poi and export them to the KC3Kai Battle Replayer",
     "author": {
