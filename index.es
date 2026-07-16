@@ -104,6 +104,23 @@ const buildLbas = (world) => {
         }))
 }
 
+// 支援舰队检测（同 KC3 SortieManager.getSupportingFleet 逻辑）：
+// 远征海域须与出击海域一致，且远征编号为 33/S1（道中支援）或 34/S2（决战支援）
+// 返回执行支援远征的舰队编号（2~4），没有则返回 0
+const getSupportFleetNum = (world, isBoss) => {
+    const fleets = getStore('info.fleets') || []
+    const missions = getStore('const.$missions') || {}
+    const dispNos = isBoss ? ['34', 'S2'] : ['33', 'S1']
+    for (let i = 1; i < 4; i++) {
+        const mission = (fleets[i] || {}).api_mission
+        if (!mission || mission[0] !== 1) continue
+        const master = missions[mission[1]]
+        if (master && master.api_maparea_id === world
+            && dispNos.includes(String(master.api_disp_no))) return i + 1
+    }
+    return 0
+}
+
 // 海域血条/难度信息
 const buildMapInfo = (world, mapnum) => {
     const maps = getStore('info.maps') || {}
@@ -182,8 +199,8 @@ class Recorder {
             mapnum,
             fleetnum: parseInt(postBody.api_deck_id, 10) || 1,
             combined: getStore('sortie.combinedFlag') || 0,
-            support1: 0,
-            support2: 0,
+            support1: getSupportFleetNum(world, false),
+            support2: getSupportFleetNum(world, true),
             hqlvl: basic.api_level || 120,
             time: Math.floor(Date.now() / 1000),
             battles: [],
